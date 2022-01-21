@@ -1,0 +1,78 @@
+{
+    "common": {
+        "name": "power-off",
+        "version": "0.0.1",
+        "news": {
+            "0.0.1": {
+                "en": "initial release",
+                "de": "Erstveröffentlichung",
+                "ru": "Начальная версия",
+                "pt": "lançamento inicial",
+                "nl": "Eerste uitgave",
+                "fr": "Première version",
+                "it": "Versione iniziale",
+                "es": "Versión inicial",
+                "pl": "Pierwsze wydanie",
+                "zh-cn": "首次出版"
+            }
+        },
+        "title": "Power Off",
+        "titleLang": {
+            "en": "Power Off",
+            "de": "Ausschalten",
+            "ru": "Выключение",
+            "pt": "Desligar",
+            "nl": "Uitschakelen",
+            "fr": "Éteindre",
+            "it": "Spegni",
+            "es": "Apagado",
+            "pl": "Wyłączanie",
+            "zh-cn": "关机"
+        },
+        "desc": {
+            "en": "Allows to power off your linux box",
+            "de": "Ermöglicht das Ausschalten Ihrer Linux-Box",
+            "ru": "Позволяет выключить вашу Linux-систему",
+            "pt": "Permite desligar sua caixa linux",
+            "nl": "Hiermee kunt u uw linux-box uitschakelen",
+            "fr": "Permet d'éteindre votre box linux",
+            "it": "Consente di spegnere la tua scatola Linux",
+            "es": "Permite apagar su caja de linux",
+            "pl": "Umożliwia wyłączenie komputera z systemem Linux",
+            "zh-cn": "允许关闭你的 linux 机器"
+        },
+        "authors": [
+            "Daniel Keller <jobe451@gmail.com>"
+        ],
+        "keywords": [
+            "reboot",
+            "power off",
+            "shutdown"
+        ],
+        "license": "MIT",
+        "platform": "Javascript/Node.js",
+        "main": "build/main.js",
+        "icon": "power-off.png",
+        "enabled": true,
+        "extIcon": "https://raw.githubusercontent.com/jobe451/ioBroker.power-off/main/admin/power-off.png",
+        "readme": "https://github.com/jobe451/ioBroker.power-off/blob/main/README.md",
+        "loglevel": "info",
+        "mode": "daemon",
+        "type": "hardware",
+        "compact": true,
+        "connectionType": "local",
+        "dataSource": "poll",
+        "materialize": true,
+        "dependencies": [
+            {
+                "js-controller": ">=2.0.0"
+            }
+        ]
+    },
+    "native": {
+        "option1": true,
+        "option2": "42"
+    },
+    "objects": [],
+    "instanceObjects": []
+}

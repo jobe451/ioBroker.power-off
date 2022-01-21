@@ -1,0 +1,41 @@
+{
+    "cli": true,
+    "target": "directory",
+    "adapterName": "power-off",
+    "title": "Power Off",
+    "description": "Allows to power off your linux box",
+    "keywords": [
+        "reboot",
+        "power off",
+        "shutdown"
+    ],
+    "expert": "yes",
+    "features": [
+        "adapter"
+    ],
+    "adminFeatures": [],
+    "type": "hardware",
+    "startMode": "daemon",
+    "connectionType": "local",
+    "dataSource": "poll",
+    "connectionIndicator": "no",
+    "language": "TypeScript",
+    "adminReact": "yes",
+    "tools": [
+        "ESLint"
+    ],
+    "releaseScript": "yes",
+    "devServer": "no",
+    "indentation": "Space (4)",
+    "quotes": "double",
+    "es6class": "yes",
+    "authorName": "Daniel Keller",
+    "authorGithub": "jobe451",
+    "authorEmail": "jobe451@gmail.com",
+    "gitRemoteProtocol": "SSH",
+    "gitCommit": "yes",
+    "defaultBranch": "main",
+    "license": "MIT License",
+    "dependabot": "yes",
+    "creatorVersion": "2.0.2"
+}
