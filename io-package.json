@@ -54,7 +54,7 @@
         "main": "build/main.js",
         "icon": "power-off.png",
         "enabled": true,
-        "extIcon": "https://raw.githubusercontent.com/jobe451/ioBroker.power-off/main/admin/power-off.png",
+        "extIcon": "https://raw.githubusercontent.com/jobe451/ioBroker.power-off/main/admin/power-off.svg",
         "readme": "https://github.com/jobe451/ioBroker.power-off/blob/main/README.md",
         "loglevel": "info",
         "mode": "daemon",
