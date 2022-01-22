@@ -21,9 +21,10 @@ iobroker ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot
 ```
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.0.2 (2022-01-22)
 
 - Fiddeling around to get stuff auto-deployed on npm
+
 ### 1.0.1 (2022-01-22)
 
 - package-lock.json removed from git-ignore
