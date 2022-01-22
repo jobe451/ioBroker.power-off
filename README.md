@@ -21,6 +21,10 @@ iobroker ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot
 ```
 
 ## Changelog
+### **WORK IN PROGRESS**
+
+- Sentry disabled from release script
+
 ### 1.0.2 (2022-01-22)
 
 - Fiddeling around to get stuff auto-deployed on npm
