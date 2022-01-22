@@ -78,11 +78,11 @@ class PowerOff extends utils.Adapter {
                 this.setTimeout(() => {
                     if (id.endsWith(POWER_OFF)) {
                         this.setStateAsync(POWER_OFF, { val: false, ack: true });
-                        this.execCommand(id, "systemctl poweroff -i");
+                        this.execCommand(id, "shutdown -h now");
                     }
                     else if (id.endsWith(REBOOT)) {
                         this.setStateAsync(REBOOT, { val: false, ack: true });
-                        this.execCommand(id, "systemctl reboot -i");
+                        this.execCommand(id, "shutdown -r now");
                     }
                 }, 1000);
             }
