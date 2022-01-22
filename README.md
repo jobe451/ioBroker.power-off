@@ -23,6 +23,8 @@ iobroker ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot
 ## Changelog
 ### **WORK IN PROGRESS**
 
+- first working release
+
 ## License
 MIT License
 
