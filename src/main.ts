@@ -54,17 +54,34 @@ class PowerOff extends utils.Adapter {
         callback();
     }
 
+    private execCommand(id: string, command: string): void {
+        exec(command, (error, stdout, stderr) => {
+            if (error) {
+                this.log.error(`state ${id} exec error: ${error}`);
+                return;
+            }
+            else if (stderr) {
+                this.log.error(`state ${id} exec error: ${stderr}`);
+                return;
+            }
+            else {
+                this.log.info(`state ${id} exec error: ${stdout}`);
+                return;
+            }
+        });
+    }
+
     private onStateChange(id: string, state: ioBroker.State | null | undefined): void {
         if (state) {
             this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
             if (state.val === true) {
                 if (id.endsWith(POWER_OFF)) {
                     this.setStateAsync(POWER_OFF, { val: false, ack: true });
-                    exec("systemctl poweroff -i");
+                    this.execCommand(id, "systemctl poweroff -i");
                 }
                 else if (id.endsWith(REBOOT)) {
                     this.setStateAsync(REBOOT, { val: false, ack: true });
-                    exec("systemctl reboot -i");
+                    this.execCommand(id, "systemctl reboot -i");
                 }
             }
         } else {

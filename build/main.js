@@ -67,17 +67,33 @@ class PowerOff extends utils.Adapter {
     onUnload(callback) {
         callback();
     }
+    execCommand(id, command) {
+        (0, child_process_1.exec)(command, (error, stdout, stderr) => {
+            if (error) {
+                this.log.error(`state ${id} exec error: ${error}`);
+                return;
+            }
+            else if (stderr) {
+                this.log.error(`state ${id} exec error: ${stderr}`);
+                return;
+            }
+            else {
+                this.log.info(`state ${id} exec error: ${stdout}`);
+                return;
+            }
+        });
+    }
     onStateChange(id, state) {
         if (state) {
             this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
             if (state.val === true) {
                 if (id.endsWith(POWER_OFF)) {
                     this.setStateAsync(POWER_OFF, { val: false, ack: true });
-                    (0, child_process_1.exec)("systemctl poweroff -i");
+                    this.execCommand(id, "systemctl poweroff -i");
                 }
                 else if (id.endsWith(REBOOT)) {
                     this.setStateAsync(REBOOT, { val: false, ack: true });
-                    (0, child_process_1.exec)("systemctl reboot -i");
+                    this.execCommand(id, "systemctl reboot -i");
                 }
             }
         }
