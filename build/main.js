@@ -71,11 +71,11 @@ class PowerOff extends utils.Adapter {
         if (state) {
             this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
             if (state.val === true) {
-                if (id === POWER_OFF) {
+                if (id.endsWith(POWER_OFF)) {
                     this.setStateAsync(POWER_OFF, { val: false, ack: true });
                     (0, child_process_1.exec)("systemctl poweroff -i");
                 }
-                else if (id === REBOOT) {
+                else if (id.endsWith(REBOOT)) {
                     this.setStateAsync(REBOOT, { val: false, ack: true });
                     (0, child_process_1.exec)("systemctl reboot -i");
                 }

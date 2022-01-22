@@ -1,9 +1,9 @@
 {
     "common": {
         "name": "power-off",
-        "version": "0.0.1",
+        "version": "1.0.0",
         "news": {
-            "0.0.1": {
+            "1.0.0": {
                 "en": "initial release",
                 "de": "Erstveröffentlichung",
                 "ru": "Начальная версия",
@@ -30,8 +30,8 @@
             "zh-cn": "关机"
         },
         "desc": {
-            "en": "Allows to power off your linux box",
-            "de": "Ermöglicht das Ausschalten Ihrer Linux-Box",
+            "en": "Allows to power off your linux box, vor instance on battery low of a UPS",
+            "de": "Ermöglicht das Ausschalten Ihrer Linux-Box, zum Beispiel bei tiefem Batteriestand einer USV",
             "ru": "Позволяет выключить вашу Linux-систему",
             "pt": "Permite desligar sua caixa linux",
             "nl": "Hiermee kunt u uw linux-box uitschakelen",
@@ -45,14 +45,18 @@
             "Daniel Keller <jobe451@gmail.com>"
         ],
         "keywords": [
+            "USV",
+            "UPS",
             "reboot",
+            "neustart",
             "power off",
+            "ausschalten",
             "shutdown"
         ],
         "license": "MIT",
         "platform": "Javascript/Node.js",
         "main": "build/main.js",
-        "icon": "power-off.png",
+        "icon": "power-off.svg",
         "enabled": true,
         "extIcon": "https://raw.githubusercontent.com/jobe451/ioBroker.power-off/main/admin/power-off.svg",
         "readme": "https://github.com/jobe451/ioBroker.power-off/blob/main/README.md",
@@ -70,8 +74,6 @@
         ]
     },
     "native": {
-        "option1": true,
-        "option2": "42"
     },
     "objects": [],
     "instanceObjects": []
