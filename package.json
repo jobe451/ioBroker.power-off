@@ -9,8 +9,12 @@
   "homepage": "https://github.com/jobe451/ioBroker.power-off",
   "license": "MIT",
   "keywords": [
+    "USV",
+    "UPS",
     "reboot",
+    "neustart",
     "power off",
+    "ausschalten",
     "shutdown"
   ],
   "repository": {
