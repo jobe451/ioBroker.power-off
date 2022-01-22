@@ -6,7 +6,7 @@
 
 Allows to power off your linux box.
 
-This adapter was created to shutdown a slave-host on low battery level of its UPS.
+This adapter was created to shutdown a slave-host on low battery level of its UPS (Uninterruptible Power Supply).
 
 For restarting the adapter either executes "sudo poweroff" or "sudo reboot". Your user under which iobroker is running (by default "iobroker") needs to have sudo rights to those two commands.
 
