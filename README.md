@@ -1,15 +1,6 @@
-![Logo](admin/power-off.png)
+![Logo](admin/power-off.svg)
 # ioBroker.power-off
-
-[![NPM version](https://img.shields.io/npm/v/iobroker.power-off.svg)](https://www.npmjs.com/package/iobroker.power-off)
-[![Downloads](https://img.shields.io/npm/dm/iobroker.power-off.svg)](https://www.npmjs.com/package/iobroker.power-off)
-![Number of Installations](https://iobroker.live/badges/power-off-installed.svg)
-![Current version in stable repository](https://iobroker.live/badges/power-off-stable.svg)
-[![Dependency Status](https://img.shields.io/david/jobe451/iobroker.power-off.svg)](https://david-dm.org/jobe451/iobroker.power-off)
-
 [![NPM](https://nodei.co/npm/iobroker.power-off.png?downloads=true)](https://nodei.co/npm/iobroker.power-off/)
-
-**Tests:** ![Test and Release](https://github.com/jobe451/ioBroker.power-off/workflows/Test%20and%20Release/badge.svg)
 
 ## power-off adapter for ioBroker
 
@@ -17,7 +8,17 @@ Allows to power off your linux box.
 
 This adapter was created to shutdown a slave-host on low battery level of its UPS.
 
-For restarting the adapter either executes "systemctl poweroff -i" or "systemctl reboot -i".
+For restarting the adapter either executes "sudo poweroff" or "sudo reboot". Your user under which iobroker is running (by default "iobroker") needs to have sudo rights to those two commands.
+
+edit the sudo rules with
+```
+sudo visudo
+```
+
+Adding this line will allow the user iobroker reboot and poweroff
+```
+iobroker ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot
+```
 
 ## Changelog
 * 1.0.0 (Daniel Keller) initial release
