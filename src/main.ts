@@ -61,11 +61,11 @@ class PowerOff extends utils.Adapter {
                 return;
             }
             else if (stderr) {
-                this.log.error(`state ${id} exec error: ${stderr}`);
+                this.log.error(`state ${id} exec std error: ${stderr}`);
                 return;
             }
             else {
-                this.log.info(`state ${id} exec error: ${stdout}`);
+                this.log.info(`state ${id} exec result: ${stdout}`);
                 return;
             }
         });
@@ -75,14 +75,16 @@ class PowerOff extends utils.Adapter {
         if (state) {
             this.log.info(`state ${id} changed: ${state.val} (ack = ${state.ack})`);
             if (state.val === true) {
-                if (id.endsWith(POWER_OFF)) {
-                    this.setStateAsync(POWER_OFF, { val: false, ack: true });
-                    this.execCommand(id, "systemctl poweroff -i");
-                }
-                else if (id.endsWith(REBOOT)) {
-                    this.setStateAsync(REBOOT, { val: false, ack: true });
-                    this.execCommand(id, "systemctl reboot -i");
-                }
+                this.setTimeout(() => {
+                    if (id.endsWith(POWER_OFF)) {
+                        this.setStateAsync(POWER_OFF, { val: false, ack: true });
+                        this.execCommand(id, "systemctl poweroff -i");
+                    }
+                    else if (id.endsWith(REBOOT)) {
+                        this.setStateAsync(REBOOT, { val: false, ack: true });
+                        this.execCommand(id, "systemctl reboot -i");
+                    }
+                }, 1000);
             }
         } else {
             this.log.info(`state ${id} deleted`);
