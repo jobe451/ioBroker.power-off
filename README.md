@@ -21,7 +21,7 @@ iobroker ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot
 ```
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.0.3 (2022-01-22)
 
 - Sentry disabled from release script
 
