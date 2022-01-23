@@ -1,5 +1,10 @@
 ![Logo](admin/power-off.svg)
-# ioBroker.power-off
+
+[![NPM version](https://img.shields.io/npm/v/iobroker.power-off.svg)](https://www.npmjs.com/package/iobroker.power-off)
+[![Downloads](https://img.shields.io/npm/dm/iobroker.power-off.svg)](https://www.npmjs.com/package/iobroker.power-off)
+![Number of Installations](https://iobroker.live/badges/power-off-installed.svg)
+![Current version in stable repository](https://iobroker.live/badges/power-off-stable.svg)
+
 [![NPM](https://nodei.co/npm/iobroker.power-off.png?downloads=true)](https://nodei.co/npm/iobroker.power-off/)
 
 ## power-off adapter for ioBroker
@@ -20,7 +25,49 @@ Adding this line will allow the user iobroker reboot and poweroff
 iobroker ALL=(ALL) NOPASSWD: /sbin/poweroff, /sbin/reboot
 ```
 
+## Example Usage
+
+Setting one of these switched to true shuts the host down or reboots.
+![Logo](admin/iobroker-objects.png)
+
+Example UPS monitoring via node-red. Sending notifications when battery gets low and shutting host when getting below a minimal threshold:
+![Logo](admin/node-red.png)
+
+Example script used in node-red monitoring:
+
+``` Javascript
+const emailPercThreshold = 70;
+const shutDownPercThreshold = 20;
+const msBetweenMails = 1000*60*30;
+const now = new Date().getTime();
+
+msg.bus_voltage = parseFloat(msg.payload);
+msg.batteryPerc = Math.min(100,Math.max((msg.bus_voltage - 3)/1.2*100));
+
+if (msg.batteryPerc < shutDownPercThreshold) {
+    msg.topic = `iobrokerwheather shutting down, UPS only ${Math.round(msg.batteryPerc)}% battery remaining`;
+    msg.payload = true;
+    return [null, msg, msg];
+}
+else if (msg.batteryPerc < emailPercThreshold) {
+    const lastMsgTime = flow.get("iobrokerwheatherLastMsg");
+    if (lastMsgTime !== undefined && now - lastMsgTime < msBetweenMails) {
+        return;
+    }
+    
+    msg.topic = `iobrokerwheather, UPS only ${Math.round(msg.batteryPerc)}% battery remaining`;
+    flow.set("iobrokerwheatherLastMsg", now);
+    return [msg, null, msg];
+}
+
+return [null, null, msg];
+```
+
 ## Changelog
+### **WORK IN PROGRESS**
+
+- "Example Usage" with screenshots and scripts added to readme 
+
 ### 1.0.3 (2022-01-22)
 
 - Sentry disabled from release script
