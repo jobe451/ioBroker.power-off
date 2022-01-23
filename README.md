@@ -64,7 +64,7 @@ return [null, null, msg];
 ```
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.0.6 (2022-01-23)
 
 - first working release
 
