@@ -64,6 +64,9 @@ return [null, null, msg];
 ```
 
 ## Changelog
+### **WORK IN PROGRESS**
+
+- Initial settings removed.
 ### 1.0.4 (2022-01-23)
 
 - "Example Usage" with screenshots and scripts added to readme
