@@ -64,27 +64,7 @@ return [null, null, msg];
 ```
 
 ## Changelog
-### 1.0.5 (2022-01-23)
-
-- Initial settings removed.
-
-### 1.0.4 (2022-01-23)
-
-- "Example Usage" with screenshots and scripts added to readme
-
-### 1.0.3 (2022-01-22)
-
-- Sentry disabled from release script
-
-### 1.0.2 (2022-01-22)
-
-- Fiddeling around to get stuff auto-deployed on npm
-
-### 1.0.1 (2022-01-22)
-
-- package-lock.json removed from git-ignore
-
-### 1.0.0 (2022-01-22)
+### **WORK IN PROGRESS**
 
 - first working release
 
