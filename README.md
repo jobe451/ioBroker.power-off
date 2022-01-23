@@ -64,9 +64,9 @@ return [null, null, msg];
 ```
 
 ## Changelog
-### **WORK IN PROGRESS**
+### 1.0.4 (2022-01-23)
 
-- "Example Usage" with screenshots and scripts added to readme 
+- "Example Usage" with screenshots and scripts added to readme
 
 ### 1.0.3 (2022-01-22)
 
